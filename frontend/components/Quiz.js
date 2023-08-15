@@ -42,11 +42,7 @@ function Quiz(props) {
               </div>
             </div>
 
-            {
-            selectedAnswer ? (
-            <button id="submitAnswerBtn" onClick={handleSubmit}>Submit answer</button> 
-            ): null
-            }
+            <button id="submitAnswerBtn"  onClick={handleSubmit} disabled={selectedAnswer ? false : true}>Submit answer</button>
           </>
         ) : 'Loading next quiz...'
       }

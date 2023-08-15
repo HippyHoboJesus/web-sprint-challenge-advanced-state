@@ -66,9 +66,9 @@ export function postAnswer(quizId, answerId) {
 }
 export function postQuiz(newQ, newT, newF) {
   return function (dispatch) {
-    axios.post('http://localhost:9000/api/quiz/new', { "question_text": newQ, "true_answer_text": newT, "false_answer_text": newF })
+    axios.post('http://localhost:9000/api/quiz/new', {"question_text": newQ, "true_answer_text": newT, "false_answer_text": newF})
     .then(res => {
-      dispatch(setMessage(res.statusText))
+      dispatch(setMessage(`Congrats: "${newQ}" is a great question!`))
     })
     dispatch(resetForm())
     // On successful POST:
