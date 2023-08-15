@@ -6,9 +6,8 @@ import { fetchQuiz, selectAnswer, postAnswer } from '../state/action-creators';
 function Quiz(props) {
   const { quiz, fetchQuiz, selectAnswer, selectedAnswer, postAnswer } = props;
 
-  useEffect(() => {
-    fetchQuiz()
-  }, []);
+  
+  useEffect(() => {if(!quiz){fetchQuiz()}}, [])
 
   const handleClick = (id) => {
     selectAnswer(id)
